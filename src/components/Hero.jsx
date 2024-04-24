@@ -5,6 +5,8 @@ import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
+import Generating from "./Generating";
+import CompanyLogos from "./CompanyLogos";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -51,6 +53,9 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
+                <ScrollParallax isAbsolutelyPositioned>
+                  <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+                </ScrollParallax>
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
@@ -76,6 +81,7 @@ const Hero = () => {
           </div>
           <BackgroundCircles />
         </div>
+        <CompanyLogos className="hidden relative z-10 mt-20 lg:block"/>
       </div>
       <BottomLine />
     </Section>
